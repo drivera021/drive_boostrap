@@ -1,0 +1,70 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#99CC99"
+  color_degraded = "#FFCC66"
+  color_bad = "#F2777A"
+}
+
+order += "wireless wlp3s0"
+order += "ipv6"
+order += "ethernet enp0s25"
+order += "battery 0"
+order += "tztime local"
+
+wireless wlp3s0 {
+        format_up = "%ip |%quality at %bitrate"
+        format_down = "v4"
+}
+
+ipv6{
+	format_up = "%ip |%quality at %bitrate"
+	format_down = "v6"
+}
+
+ethernet enp0s25 {
+        format_up = "E: %ip (%speed)"
+        format_down = "e"
+}
+
+disk "/" {
+	format = "[ load: %1min, %5min, %15min ]"
+}
+
+ddate {
+	format = "[ %{%a, %b %d%}, %Y%N - %H ]"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        low_threshold = 10
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+        hide_if_equals_localtime = false
+}
+
+load {
+        format = "%5min"
+}
+
+memory {
+        format = "%used"
+        threshold_degraded = "10%"
+        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "%free"
+}
+
+read_file uptime {
+        path = "/proc/uptime"
+}
