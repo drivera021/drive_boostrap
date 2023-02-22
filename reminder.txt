@@ -1,0 +1,50 @@
+Reminders for Command Line:
+
+1. Volume Control: Use 'pavucontrol'
+
+2. Appication launcher: 'super + d' (dmenu)
+
+3. Screen Brightness: 'xrandr --output <value> --brightness <dec. value>'
+		      'xrandr --output eDP-1 or --HDMI-1'
+4. Resize i3 with: 'super + r' 
+
+5. Ranger Shortcuts:
+
+	Use spacebar to select files one by one. "V" to perform visual selection, "v" reverses current selection. For instance, you can run :delete after selecting multiple files and folders.
+	As mentioned above, execute :delete to remove currently selected file (or files).
+	To fullscreen a preview window, hit i. Hit i again to return the preview window to it’s normal size.
+	Vi’s gg and G allow you to jump to the top and bottom of the file list respectively.
+	Hit zh to toggle hidden files display.
+	As in Vim, / searches for a file in a current buffer, while n and N let you navigate to the next and previous matches respectively.
+	Similarly, :filter allows you to only limit your view to the files matching a pattern. It’s also interactive - changes are applied as you type.
+
+6. Blacklisting:
+	
+	If there is any inaccessible pages, check "/etc/hosts"
+
+7. Send files with Rsync: rsync -rtvzP /path/to/file root@example.org:/path/on/the/server
+		-r – run recurssively (include directories)
+		-t – transfer modification times, which allows skipping files that have not been modified on future uploads
+		-v – visual, show files uploaded
+		-z – compress files for upload
+		-P – if uploading a large file and upload breaks, pick up where we left off rather than reuploading the entire file 
+
+8. Download files with Rsync: rsync -rtvzP root@example.org:/path/to/file /path/to/file
+
+9. Ranger config file:	~/.config/ranger/scope.sh	
+
+10. Games list:
+	
+	tint nsnake nudoku bastet	
+
+11. i3 Config file: ~/.config/i3/config
+
+12. Alias location: ~/.bashrc
+
+13. Urxvt Config file: ~/.Xresources
+
+14. Add 1st char to multiple selected lines:
+	a. Ctrl + V "Visual Block"
+	b. Select lines
+	c. Shift + I "Insert mode" then "char"
+	d. Esc

@@ -1,0 +1,12 @@
+nvim
+unzip
+neofetch
+curl 
+htop
+pavucontrol
+ncal
+rsync
+python3
+calibre
+zathura
+ranger
